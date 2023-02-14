@@ -82,6 +82,11 @@ exports.delete = async (req, res, next) => {
     try {
         const contactService = new ContactService(MongoDB.client);
         const document = await contactService.delete(req.params.id);
+
+
+
+
+        
         if (!document) {
             return next(new ApiError(404, "Contact not found"));
         }
